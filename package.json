@@ -1,0 +1,60 @@
+{
+  "name": "epl-fixtures-cli",
+  "version": "1.0.0",
+  "description": "CLI for getting fixtures for Premier League clubs",
+  "preferGlobal": true,
+  "bin": {
+    "fixtures": "src/cli.js"
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha test/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecrmnn/epl-fixtures-cli"
+  },
+  "keywords": [
+    "cli",
+    "football",
+    "soccer",
+    "fixtures",
+    "liverpool",
+    "manchester united",
+    "manchester city",
+    "chelsea",
+    "tottenham",
+    "arsenal",
+    "leicester",
+    "everton",
+    "spurs",
+    "epl",
+    "premier league",
+    "fa cup",
+    "capital one cup",
+    "champions league",
+    "europa league"
+  ],
+  "author": {
+    "name": "Daniel Eckermann",
+    "email": "danieleckermann@gmail.com",
+    "url": "http://danieleckermann.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecrmnn/epl-fixtures-cli/issues"
+  },
+  "homepage": "https://github.com/ecrmnn/epl-fixtures-cli",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "commander": "^2.9.0",
+    "epl-fixtures": "^1.1.0",
+    "moment": "^2.12.0"
+  }
+}
