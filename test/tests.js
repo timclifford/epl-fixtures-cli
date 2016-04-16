@@ -29,10 +29,10 @@ describe('Running CLI without any params', function () {
     const chelsea = (captured_stdout.match(/Chelsea/g) || []).length;
     const stoke = (captured_stdout.match(/Stoke/g) || []).length;
 
-    expect(liverpool > 1).to.be.equal(true);
-    expect(arsenal > 1).to.be.equal(true);
-    expect(chelsea > 1).to.be.equal(true);
-    expect(stoke > 1).to.be.equal(true);
+    expect(liverpool).to.be.above(1);
+    expect(arsenal).to.be.above(1);
+    expect(chelsea).to.be.above(1);
+    expect(stoke).to.be.above(1);
   });
 });
 
@@ -60,23 +60,19 @@ describe('Running CLI with club param', function () {
       }
     });
 
-    const liverpool = (captured_stdout.match(/Liverpool/g) || []).length;
-
-    expect(liverpoolMatches.length).to.be.equal(liverpool);
     expect(liverpoolMatches.length).to.be.equal(clubMatches.length);
   });
 });
 
 describe('Running CLI help command', function () {
   before(function (done) {
-    exec('node ./src/cli.js --help', function (error, stdout, stderr) {
+    exec('node ./src/cli --help', function (error, stdout, stderr) {
       captured_stdout = stdout;
       done();
     });
   });
 
   it('returns available options', function () {
-    expect(captured_stdout).to.have.string('Options:');
     expect(captured_stdout).to.have.string('--help');
     expect(captured_stdout).to.have.string('--version');
     expect(captured_stdout).to.have.string('--liverpool');
