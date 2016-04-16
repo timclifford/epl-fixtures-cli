@@ -5,7 +5,7 @@
   "preferGlobal": true,
   "bin": {
     "fixtures": "src/cli.js"
-  }
+  },
   "scripts": {
     "test": "node_modules/.bin/mocha test/tests.js"
   },
