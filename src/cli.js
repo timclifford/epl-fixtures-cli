@@ -3,12 +3,10 @@
 'use strict';
 
 const Fixtures = require('epl-fixtures');
-const chalk = require('chalk');
 const pckg = require('../package.json');
 const program = require('commander');
 const moment = require('moment');
 const Table = require('cli-table');
-
 
 program.version(pckg.version, '-v, --version');
 
@@ -74,16 +72,32 @@ const render = function (data) {
     table.push(schema);
   });
 
-
-  console.log(table.toString());
+  return table.toString();
 }
 
-if (choosenClub !== 'all') {
-  return new Fixtures().club(choosenClub, function (err, matches) {
-    render(matches);
+if (require.main === module) {
+  if (choosenClub !== 'all') {
+    return new Fixtures().club(choosenClub, function (err, matches) {
+      console.log(render(matches));
+    });
+  }
+
+  return new Fixtures().all(function (err, matches) {
+    console.log(render(matches));
   });
+} else {
+  module.exports = {
+    club: function (club, callback) {
+      new Fixtures().club(club, function (err, matches) {
+        callback(render(matches));
+      });
+    },
+
+    all: function (callback) {
+      new Fixtures().all(function (err, matches) {
+        callback(render(matches));
+      });
+    }
+  };
 }
 
-return new Fixtures().all(function (err, matches) {
-  render(matches);
-});
