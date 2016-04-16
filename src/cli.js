@@ -34,11 +34,11 @@ const clubs = [
   'westham'
 ];
 
-let choosenClub = 'all';
+let chosenClub = 'all';
 
 clubs.forEach(function (club) {
   program.option('--' + club, club, function () {
-    choosenClub = club;
+    chosenClub = club;
   });
 });
 program.parse(process.argv);
@@ -76,8 +76,8 @@ const render = function (data) {
 }
 
 if (require.main === module) {
-  if (choosenClub !== 'all') {
-    return new Fixtures().club(choosenClub, function (err, matches) {
+  if (chosenClub !== 'all') {
+    return new Fixtures().club(chosenClub, function (err, matches) {
       console.log(render(matches));
     });
   }
@@ -100,4 +100,3 @@ if (require.main === module) {
     }
   };
 }
-

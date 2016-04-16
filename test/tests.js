@@ -27,7 +27,7 @@ describe('Running CLI without any params', function () {
   });
 });
 
-describe('Running CLI with club param', function () {
+describe('Running CLI with club param (liverpool)', function () {
   let table2 = '';
 
   before(function (done) {
