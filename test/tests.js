@@ -24,17 +24,18 @@ describe('Running CLI without any params', function () {
   });
 
   it('returns matches for multiple clubs', function () {
-    const liverpool = captured_stdout.match(/Liverpool/g).length;
-    const arsenal = captured_stdout.match(/Arsenal/g).length;
-    const chelsea = captured_stdout.match(/Chelsea/g).length;
-    const stoke = captured_stdout.match(/Stoke/g).length;
+    console.log(captured_stdout);
+    const liverpool = captured_stdout.indexOf('Liverpool');
+    const arsenal = captured_stdout.indexOf('Arsenal');
+    const chelsea = captured_stdout.indexOf('Chelsea');
+    const stoke = captured_stdout.indexOf('Stoke');
 
     console.log(liverpool,arsenal,chelsea,stoke);
 
-    expect(liverpool).to.be.above(1);
-    expect(arsenal).to.be.above(1);
-    expect(chelsea).to.be.above(1);
-    expect(stoke).to.be.above(1);
+    expect(liverpool).to.not.equal(-1);
+    expect(arsenal).to.not.equal(-1);
+    expect(chelsea).to.not.equal(-1);
+    expect(stoke).to.not.equal(-1);
   });
 });
 
