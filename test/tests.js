@@ -24,10 +24,12 @@ describe('Running CLI without any params', function () {
   });
 
   it('returns matches for multiple clubs', function () {
-    const liverpool = (captured_stdout.match(/Liverpool/g) || []).length;
-    const arsenal = (captured_stdout.match(/Arsenal/g) || []).length;
-    const chelsea = (captured_stdout.match(/Chelsea/g) || []).length;
-    const stoke = (captured_stdout.match(/Stoke/g) || []).length;
+    const liverpool = captured_stdout.match(/Liverpool/g).length;
+    const arsenal = captured_stdout.match(/Arsenal/g).length;
+    const chelsea = captured_stdout.match(/Chelsea/g).length;
+    const stoke = captured_stdout.match(/Stoke/g).length;
+
+    console.log(liverpool,arsenal,chelsea,stoke);
 
     expect(liverpool).to.be.above(1);
     expect(arsenal).to.be.above(1);
