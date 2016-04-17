@@ -10,37 +10,38 @@ const Table = require('cli-table');
 
 program.version(pckg.version, '-v, --version');
 
-const clubs = [
-  'arsenal',
-  'astonvilla',
-  'bournemouth',
-  'chelsea',
-  'crystalpalace',
-  'everton',
-  'leicester',
-  'liverpool',
-  'mancity',
-  'manutd',
-  'newcastle',
-  'norwich',
-  'southampton',
-  'stoke',
-  'sunderland',
-  'swansea',
-  'spurs',
-  'tottenham',
-  'watford',
-  'westbrom',
-  'westham'
-];
+const clubs = {
+  arsenal: 'arsenal',
+  astonvilla: 'aston villa',
+  bournemouth: 'bournemouth',
+  chelsea: 'chelsea',
+  crystalpalace: 'crystal palace',
+  everton: 'everton',
+  leicester: 'leicester',
+  liverpool: 'liverpool',
+  mancity: 'man city',
+  manutd: 'man utd',
+  newcastle: 'newcastle',
+  norwich: 'norwich',
+  southampton: 'southampton',
+  stoke: 'stoke',
+  sunderland: 'sunderland',
+  swansea: 'swansea',
+  spurs: 'spurs',
+  tottenham: 'tottenham',
+  watford: 'watford',
+  westbrom: 'west brom',
+  westham: 'west ham'
+}
 
 let chosenClub = 'all';
 
-clubs.forEach(function (club) {
-  program.option('--' + club, club, function () {
-    chosenClub = club;
+for (const attr in clubs) {
+  program.option('--' + attr, clubs[attr], function () {
+    chosenClub = clubs[attr];
   });
-});
+}
+
 program.parse(process.argv);
 
 const render = function (data) {

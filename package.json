@@ -1,6 +1,6 @@
 {
   "name": "epl-fixtures-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI for getting fixtures for Premier League clubs",
   "preferGlobal": true,
   "bin": {
