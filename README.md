@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/ecrmnn/epl-fixtures-cli.svg?branch=master)](https://travis-ci.org/ecrmnn/epl-fixtures-cli)
 [![npm version](https://img.shields.io/npm/v/epl-fixtures-cli.svg)](http://badge.fury.io/js/epl-fixtures-cli)
 [![npm version](https://img.shields.io/npm/dm/epl-fixtures-cli.svg)](http://badge.fury.io/js/epl-fixtures-cli)
-[![npm version](https://img.shields.io/npm/l/epl-fixtures-cli.svg)](http://badge.fury.io/js/epl-fixtures-cli)
+[![npm version](https://img.shields.io/npm/l/epl-fixtures-cli.svg)](http://badge.fury.io/js/epl-fixtures-cli) [![Greenkeeper badge](https://badges.greenkeeper.io/timclifford/epl-fixtures-cli.svg)](https://greenkeeper.io/)
 
 ### Installation
 ```bash
