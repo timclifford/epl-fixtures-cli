@@ -45,7 +45,7 @@
   },
   "homepage": "https://github.com/ecrmnn/epl-fixtures-cli",
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^5.0.0",
     "mocha": "^6.2.0"
   },
   "dependencies": {
